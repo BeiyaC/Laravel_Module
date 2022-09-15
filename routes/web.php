@@ -23,3 +23,7 @@ Route::get('product', [ProductController::class, 'show']);
 Route::get('product/{id}', [ProductController::class, 'showId']);
 
 Route::get('cart', [CartController::class, 'show']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

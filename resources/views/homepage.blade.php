@@ -1,5 +1,3 @@
-<html>
-    <body>
-        <h1>Homepage </h1>
-    </body>
-</html>
+<x-layout>
+    Welcome to the homepage!
+</x-layout>
