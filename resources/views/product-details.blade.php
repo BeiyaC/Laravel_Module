@@ -1,41 +1,26 @@
 <x-layout>
-    <x-layout>
-        <table>
+    <table>
+        @foreach($product as $data)
             <tr>
                 <td>
-                    <br><br>
-                    <form action="" method="" >
-                        <input type="hidden" name="key" value="#">
-                        <input type="number" id="quantity" name="quantity" min="1" max="6">
-                        <input type="checkbox" id="check" name="check" value="item">
-                        <input type="submit" value="Go to shop">
-                    </form>
+                    {{ $data->name }}
                 </td>
                 <td>
                     Price TTC: <br>
-                    <p style="color:red; text-decoration: line-through;" >
+                    <p>
+                        {{ $data->price }}
                     </p>
                 </td>
                 <td>
-                    Price HT: <br>
-                    <p style="color:red; text-decoration: line-through;" >
-                    </p>
+                    Weight: {{ $data->weight }} <br> g
                 </td>
                 <td>
-                    Weight: <br> g
+                    Discount: {{ $data->discount }} <br>
                 </td>
                 <td>
-                    Discount: <br>
-                    <br><br>
-                    New Price TTC: <br>
-                    <p style="color:green; font-size:150%; text-decoration: underline;">
-                    </p>
-                </td>
-                <td>
-                    <img src="">
+                    <img src="../{{ $data->image }}">
                 </td>
             </tr>
-        </table>
-    </x-layout>
-
+        @endforeach
+    </table>
 </x-layout>

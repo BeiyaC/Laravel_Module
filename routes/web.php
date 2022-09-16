@@ -18,7 +18,7 @@ use App\Http\Controllers\CartController;
 
 Route::get('/', [HomeController::class, 'show']);
 
-Route::get('product', [ProductController::class, 'show']);
+Route::get('product', [ProductController::class, 'index']);
 
 Route::get('product/{id}', [ProductController::class, 'showId']);
 
