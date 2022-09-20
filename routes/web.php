@@ -5,6 +5,9 @@ use App\Http\Controllers\Frontoffice\CartController;
 use App\Http\Controllers\Frontoffice\HomeController;
 use App\Http\Controllers\Frontoffice\ProductController;
 use App\Http\Controllers\Backoffice\BackProductController;
+use App\Http\Controllers\Backoffice\CategoryController;
+use App\Http\Controllers\Backoffice\OrderController;
+use App\Http\Controllers\Backoffice\CustomerController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,20 +33,13 @@ Route::get('cart', [CartController::class, 'show']);
 
 Route::get('backoffice/homepage', [AdminController::class, 'index']);
 
-Route::get('backoffice/products', [BackProductController::class, 'index']);
+Route::resource('backoffice/products', BackProductController::class);
 
-Route::get('backoffice/product/{product}', [BackProductController::class, 'show']);
+Route::resource('backoffice/categories', CategoryController::class);
 
-Route::get('backoffice/product/{product}/edit', [BackProductController::class, 'edit']);
+Route::resource('backoffice/orders', OrderController::class);
 
-Route::put('backoffice/product/{product}', [BackProductController::class, 'update']);
-
-Route::get('backoffice/create', [BackProductController::class, 'create']);
-
-Route::post('backoffice/products', [BackProductController::class, 'store']);
-
-Route::delete('backoffice/products/{product}', [BackProductController::class, 'destroy']);
-
+Route::resource('backoffice/customers', CustomerController::class);
 
 Auth::routes();
 

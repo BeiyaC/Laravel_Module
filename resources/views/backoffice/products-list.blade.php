@@ -6,7 +6,7 @@
                     {{ $product->name }}
                 </td>
                 <td>
-                    <a href="/backoffice/product/{{ $product->id }}" class="btn btn-success">Details</a>
+                    <a href="/backoffice/products/{{ $product->id }}" class="btn btn-success">Details</a>
                 </td>
                 <td>
                     Price TTC:
@@ -34,7 +34,7 @@
                     @endif
                 </td>
                 <td>
-                    <a href="/backoffice/product/{{ $product->id }}/edit" class="btn btn-primary">Update</a>
+                    <a href="/backoffice/products/{{ $product->id }}/edit" class="btn btn-primary">Update</a>
                 </td>
                 <td>
                     <form action="/backoffice/products/{{ $product->id }}" method="post">
@@ -47,7 +47,7 @@
         @endforeach
         <tr>
             <td>
-                <a href="/backoffice/create" class="btn btn-info">New product</a>
+                <a href="/backoffice/products/create" class="btn btn-info">New product</a>
             </td>
         </tr>
     </table>
