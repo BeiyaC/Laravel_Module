@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Frontoffice;
+
+use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
 {
