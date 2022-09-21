@@ -5,6 +5,11 @@
                 {{ $product->name }}
             </td>
             <td>
+                Category:
+                <p>
+                    {{$product->category->name}}
+                </p>
+            <td>
                 Price TTC:
                 <p>
                     {{ $product->price }}

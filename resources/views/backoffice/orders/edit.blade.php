@@ -1,5 +1,5 @@
 <x-admin>
-    <form action="/backoffice/orders/{{ $order->id }}" method="post">
+    <form action="{{ route('orders.update', ['order'=>$order]) }}" method="post">
         @csrf
         @method('PUT')
         <div class="form-group">

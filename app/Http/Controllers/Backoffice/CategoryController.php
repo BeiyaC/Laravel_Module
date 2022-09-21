@@ -16,7 +16,7 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::all();
-        return view('backoffice.categories-list', ['categories' => $categories]);
+        return view('backoffice.categories.index', ['categories' => $categories]);
     }
 
     /**
@@ -26,7 +26,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('backoffice.new-category');
+        return view('backoffice.categories.create');
     }
 
     /**
@@ -51,7 +51,7 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        //
+        return view('backoffice.categories.show', ['category' => $category]);
     }
 
     /**
@@ -62,7 +62,7 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        return view('backoffice.category-edit', ['category' => $category]);
+        return view('backoffice.categories.edit', ['category' => $category]);
     }
 
     /**

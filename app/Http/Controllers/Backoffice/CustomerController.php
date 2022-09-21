@@ -16,7 +16,7 @@ class CustomerController extends Controller
     public function index()
     {
         $customers = Customer::all();
-        return view('backoffice.customers-list', ['customers' => $customers]);
+        return view('backoffice.customers.index', ['customers' => $customers]);
     }
 
     /**
@@ -26,7 +26,7 @@ class CustomerController extends Controller
      */
     public function create()
     {
-        return view('backoffice.new-customer');
+        return view('backoffice.customers.create');
     }
 
     /**
@@ -67,7 +67,7 @@ class CustomerController extends Controller
      */
     public function edit(Customer $customer)
     {
-        return view('backoffice.customer-edit', ['customer' => $customer]);
+        return view('backoffice.customers.edit', ['customer' => $customer]);
     }
 
     /**

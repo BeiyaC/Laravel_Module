@@ -1,5 +1,5 @@
 <x-admin>
-    <form class="" action="/backoffice/categories/{{$category->id}}" method="post">
+    <form class="" action="{{ route('categories.update', ['category'=>$category]) }}" method="post">
         @method('PUT')
         @csrf
         <div class="form-group">

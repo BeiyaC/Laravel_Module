@@ -16,7 +16,7 @@ class OrderController extends Controller
     public function index()
     {
         $orders = Order::all();
-        return view('backoffice.orders-list', ['orders' => $orders]);
+        return view('backoffice.orders.index', ['orders' => $orders]);
     }
 
     /**
@@ -26,7 +26,7 @@ class OrderController extends Controller
      */
     public function create()
     {
-        return view('backoffice.new-order');
+        return view('backoffice.orders.create');
     }
 
     /**
@@ -65,7 +65,7 @@ class OrderController extends Controller
      */
     public function edit(Order $order)
     {
-        return view('backoffice.order-edit', ['order' => $order]);
+        return view('backoffice.orders.edit', ['order' => $order]);
     }
 
     /**

@@ -6,10 +6,13 @@
                     {{ $category->name }}
                 </td>
                 <td>
-                    <a href="/backoffice/categories/{{$category->id}}/edit" class="btn btn-primary">Update</a>
+                    <a href="{{ route('categories.show', ['category'=>$category]) }}"
+                       class="btn btn-success">Details</a>
+                <td>
+                    <a href="{{ route('categories.edit', ['category'=>$category]) }}" class="btn btn-primary">Update</a>
                 </td>
                 <td>
-                    <form action="/backoffice/categories/{{$category->id}}" method="post">
+                    <form action="{{ route('categories.destroy', ['category'=>$category]) }}" method="post">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger">Delete</button>
@@ -19,7 +22,7 @@
         @endforeach
         <tr>
             <td>
-                <a href="/backoffice/categories/create" class="btn btn-info">New category</a>
+                <a href="{{ route('categories.create') }}" class="btn btn-info">New category</a>
             </td>
         </tr>
     </table>

@@ -1,5 +1,5 @@
 <x-admin>
-    <form class="" action="/backoffice/products" method="post">
+    <form class="" action="{{ route('products.store') }}" method="post">
         {{ csrf_field() }}
         <div class="form-group">
             <label for="name">Name</label>

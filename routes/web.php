@@ -4,7 +4,7 @@ use App\Http\Controllers\Backoffice\AdminController;
 use App\Http\Controllers\Frontoffice\CartController;
 use App\Http\Controllers\Frontoffice\HomeController;
 use App\Http\Controllers\Frontoffice\ProductController;
-use App\Http\Controllers\Backoffice\BackProductController;
+use App\Http\Controllers\Backoffice\ProductController as BOProductController;
 use App\Http\Controllers\Backoffice\CategoryController;
 use App\Http\Controllers\Backoffice\OrderController;
 use App\Http\Controllers\Backoffice\CustomerController;
@@ -33,7 +33,7 @@ Route::get('cart', [CartController::class, 'show']);
 
 Route::get('backoffice/homepage', [AdminController::class, 'index']);
 
-Route::resource('backoffice/products', BackProductController::class);
+Route::resource('backoffice/products', BOProductController::class);
 
 Route::resource('backoffice/categories', CategoryController::class);
 

@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
-class BackProductController extends Controller
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,7 @@ class BackProductController extends Controller
     public function index()
     {
         $products = Product::all();
-        return view('backoffice.products-list', ['products' => $products]);
+        return view('backoffice.products.index', ['products' => $products]);
     }
 
     /**
@@ -26,7 +26,7 @@ class BackProductController extends Controller
      */
     public function create()
     {
-        return view('backoffice.new-product');
+        return view('backoffice.products.create');
     }
 
     /**
@@ -54,7 +54,8 @@ class BackProductController extends Controller
      */
     public function show(Product $product)
     {
-        return view('backoffice.product-details', ['product' => $product]);
+        $category = Product::find($product->id)->category;
+        return view('backoffice.products.show', ['product' => $product, 'category' => $category]);
     }
 
     /**
@@ -65,7 +66,7 @@ class BackProductController extends Controller
      */
     public function edit(Product $product)
     {
-        return view('backoffice.product-edit', ['product' => $product]);
+        return view('backoffice.products.edit', ['product' => $product]);
     }
 
     /**

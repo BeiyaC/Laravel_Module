@@ -6,7 +6,7 @@
                     {{ $product->name }}
                 </td>
                 <td>
-                    <a href="/backoffice/products/{{ $product->id }}" class="btn btn-success">Details</a>
+                    <a href="{{ route('products.show',['product' => $product]) }}" class="btn btn-success">Details</a>
                 </td>
                 <td>
                     Price TTC:
@@ -34,10 +34,10 @@
                     @endif
                 </td>
                 <td>
-                    <a href="/backoffice/products/{{ $product->id }}/edit" class="btn btn-primary">Update</a>
+                    <a href="{{ route('products.edit',['product' => $product]) }}" class="btn btn-primary">Update</a>
                 </td>
                 <td>
-                    <form action="/backoffice/products/{{ $product->id }}" method="post">
+                    <form action="{{ route('products.destroy',['product' => $product]) }}" method="post">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger">Delete</button>

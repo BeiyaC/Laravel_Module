@@ -27,10 +27,10 @@
                     </p>
                 </td>
                 <td>
-                    <a href="/backoffice/orders/{{ $order->id }}/edit" class="btn btn-success">Update</a>
+                    <a href="{{ route('orders.edit', ['order'=>$order]) }}" class="btn btn-success">Update</a>
                 </td>
                 <td>
-                    <form action="/backoffice/orders/{{ $order->id }}" method="post">
+                    <form action="{{ route('orders.destroy', ['order'=>$order]) }}" method="post">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger">Delete</button>
@@ -40,7 +40,7 @@
         @endforeach
         <tr>
             <td>
-                <a href="/backoffice/orders/create" class="btn btn-info">New order</a>
+                <a href="{{ route('orders.create') }}" class="btn btn-info">New order</a>
             </td>
     </table>
 </x-admin>
