@@ -1,6 +1,13 @@
 <x-admin>
     <form class="" action="{{ route('products.store') }}" method="post">
-        {{ csrf_field() }}
+        @csrf
+        @if($errors->any())
+            @foreach($errors->all() as $error)
+                <li>
+                    {{$error}}
+                </li>
+            @endforeach
+        @endif
         <div class="form-group">
             <label for="name">Name</label>
             <input type="text" class="form-control" name="name" id="" placeholder="name">

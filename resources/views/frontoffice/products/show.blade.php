@@ -2,23 +2,23 @@
     <table>
         <tr>
             <td>
-                {{ $product->name }}
+                {{ $eproduct->name }}
             </td>
             <td>
                 Price TTC: <br>
                 <p>
-                    {{ $product->price }}
+                    {{ $eproduct->price }}
                 </p>
             </td>
             <td>
-                Weight: {{ $product->weight }} <br> g
+                Weight: {{ $eproduct->weight }} <br> g
             </td>
             <td>
-                Discount: {{ $product->discount }} <br>
+                Discount: {{ $eproduct->discount }} <br>
             </td>
             <td>
-                @if($product->image)
-                    <img src="../{{ $product->image }}">
+                @if($eproduct->image)
+                    <img src="../{{ $eproduct->image }}">
                 @else
                     <img src="../assets/draw.jpg">
                 @endif

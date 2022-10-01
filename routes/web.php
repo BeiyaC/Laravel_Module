@@ -3,7 +3,7 @@
 use App\Http\Controllers\Backoffice\AdminController;
 use App\Http\Controllers\Frontoffice\CartController;
 use App\Http\Controllers\Frontoffice\HomeController;
-use App\Http\Controllers\Frontoffice\ProductController;
+use App\Http\Controllers\Frontoffice\ProductController as FOProductController;
 use App\Http\Controllers\Backoffice\ProductController as BOProductController;
 use App\Http\Controllers\Backoffice\CategoryController;
 use App\Http\Controllers\Backoffice\OrderController;
@@ -23,22 +23,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'show']);
 
-Route::get('products', [ProductController::class, 'index']);
-
-Route::get('products/{order}', [ProductController::class, 'showByOrder'])->name('sortPage');
-
-Route::get('product/{product}', [ProductController::class, 'showId']);
-
-Route::get('cart', [CartController::class, 'show']);
-
 Route::get('backoffice/homepage', [AdminController::class, 'index']);
 
+Route::get('eproducts/{order}', [FOProductController::class, 'showByOrder'])->name('sort');
+
+Route::resource('cart', CartController::class);
+Route::resource('eproducts', FOProductController::class);
 Route::resource('backoffice/products', BOProductController::class);
-
 Route::resource('backoffice/categories', CategoryController::class);
-
 Route::resource('backoffice/orders', OrderController::class);
-
 Route::resource('backoffice/customers', CustomerController::class);
 
 Auth::routes();

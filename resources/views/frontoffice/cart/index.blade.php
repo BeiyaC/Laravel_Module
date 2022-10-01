@@ -40,7 +40,7 @@
                 </p>
             </td>
             <td>
-               g
+                g
             </td>
             <td>
                 <p style="color:green; font-size:150%;">
@@ -71,7 +71,7 @@
             </td>
             <td>
                 Change quantity:<br>
-                <form action="cart" method="post" >
+                <form action="" method="post">
                     <input type="hidden" name="key" value="">
                     <input type="hidden" name="delivery" value="">
                     <input type="number" id="quantity" name="quantity" min="1" max="6">
@@ -82,13 +82,13 @@
         <tr>
             <td colspan="4">
                 Choose delivery:<br>
-                <form action="cart" method="post" >
+                <form action="" method="post">
                     <input type="hidden" name="key" value="">
                     <input type="hidden" name="quantity" value="">
                     <select name="delivery" id="delivery">
-                        <option value="" ></option>
-                        <option value="La Poste" > La Poste </option>
-                        <option value="DHL"> DHL </option>
+                        <option value=""></option>
+                        <option value="La Poste"> La Poste</option>
+                        <option value="DHL"> DHL</option>
                     </select>
                     <input type="submit" value="Confirm Delivery">
                 </form>
